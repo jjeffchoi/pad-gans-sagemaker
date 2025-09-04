@@ -11,12 +11,11 @@ TIMESTAMP = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 JOB_BASE_NAME = f"cyclegan-pad"
 S3_OUTPUT_PREFIX = f"models/{JOB_BASE_NAME}"
 
-# Get your AWS account's execution role
 try:
     role = sagemaker.get_execution_role()
 except ValueError:
     iam = boto3.client('iam')
-    role_name = "Your-SageMaker-Execution-Role-Name"  # <--- REPLACE with your role name
+    role_name = "SageMaker-Role"
     role = iam.get_role(RoleName=role_name)['Role']['Arn']
 
 # ===================================================================
