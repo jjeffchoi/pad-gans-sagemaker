@@ -5,7 +5,7 @@ import boto3
 from datetime import datetime
 
 # --- Configuration ---
-S3_BUCKET_NAME = "your-s3-bucket-name"  # <--- REPLACE with your S3 bucket name
+S3_BUCKET_NAME = "gans-training"
 S3_DATA_PREFIX = "datasets/pad_cyclegan" # The S3 prefix where trainA/ and trainB/ are located
 TIMESTAMP = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 JOB_BASE_NAME = f"cyclegan-pad"
